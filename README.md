@@ -12,7 +12,7 @@ Alternativně: [Stažení SVG Use Case](https://raw.githubusercontent.com/pslib-
 
 Níže je vložen třídový diagram (UML class) znázorňující hlavní entity systému:
 
-![Třídový diagram](uml_class_diagram_ztrazy_a_nalezy.svg)
+![Třídový diagram](uml_class_diagram_ztráty_a_nálezy.svg)
 
 Alternativně: [Stažení SVG třídového diagramu](https://raw.githubusercontent.com/pslib-cz/2025-p1a-inf-nis-DKalousek/main/uml_class_diagram_ztrazy_a_nalezy.svg)
 
