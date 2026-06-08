@@ -1,120 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
-  <style>
-    .actor { font: bold 14px sans-serif; fill: #111; }
-    .actor-box { fill: #f4f7fb; stroke: #2b6cb0; stroke-width: 2; rx:8; }
-    .usecase { fill: #fff; stroke: #2d3748; stroke-width: 2; }
-    .usecase-text { font: 13px sans-serif; fill: #111; text-anchor: middle; }
-    .line { stroke: #2d3748; stroke-width: 1.8; }
-    .note { font: 12px sans-serif; fill: #444; }
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <linearGradient id="grad-usecase" x1="0" x2="1">
+      <stop offset="0%" stop-color="#E6FFFA"/>
+      <stop offset="100%" stop-color="#BEE3DB"/>
+    </linearGradient>
+    <linearGradient id="grad-accent" x1="0" x2="1">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#0EA5A4"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <style>
+      :root {
+        --bg: #ffffff;
+        --muted: #475569;
+        --primary: #0ea5a4; /* teal */
+        --accent: #7c3aed; /* purple */
+        --card: #f8fafc;
+        --usecase-stroke: #0f172a;
+      }
+
+      svg { background: var(--bg); }
+      .title { font: 700 20px/1.1 'Segoe UI', Roboto, sans-serif; fill: var(--usecase-stroke); }
+      .actor { font: 600 14px 'Segoe UI', Roboto, sans-serif; fill: var(--usecase-stroke); }
+      .actor-box { fill: var(--card); stroke: var(--primary); stroke-width: 2; rx:10; filter: url(#shadow); }
+      .usecase { fill: url(#grad-usecase); stroke: var(--usecase-stroke); stroke-width: 2; }
+      .usecase-text { font: 600 13px 'Segoe UI', Roboto, sans-serif; fill: var(--usecase-stroke); text-anchor: middle; }
+      .line { stroke: #334155; stroke-width: 1.8; stroke-linecap: round; }
+      .note { font: 12px 'Segoe UI', Roboto, sans-serif; fill: var(--muted); }
+      .legend { fill: #fff7ed; stroke: #f97316; }
+
+      /* accent highlights for right-side usecases */
+      .usecase.accent { fill: url(#grad-accent); stroke: #2b0635; }
+
+      /* dark-mode */
+      @media (prefers-color-scheme: dark) {
+        :root { --bg: #0b1220; --muted: #cbd5e1; --primary: #34d399; --accent: #a78bfa; --card: #031022; --usecase-stroke: #e6eef8; }
+        svg { background: #071023; }
+        .actor-box { filter: none; }
+        .legend { fill: #052034; stroke: #ffb86b; }
+      }
+    </style>
+  </defs>
 
   <!-- Title -->
-  <text x="600" y="30" font-family="sans-serif" font-size="18" font-weight="bold" text-anchor="middle">UML Use Case diagram — Informační systém</text>
+  <text x="700" y="40" class="title" text-anchor="middle">UML Use Case diagram — Informační systém</text>
 
   <!-- Actors (left) -->
   <g id="actors-left">
-    <!-- Guest -->
-    <rect x="40" y="80" width="150" height="44" class="actor-box"/>
-    <text x="115" y="108" class="actor">Host (Guest)</text>
+    <rect x="60" y="110" width="180" height="56" class="actor-box"/>
+    <text x="150" y="145" class="actor" text-anchor="middle">Host (Guest)</text>
 
-    <!-- User -->
-    <rect x="40" y="190" width="150" height="44" class="actor-box"/>
-    <text x="115" y="218" class="actor">Registrovaný uživatel (User)</text>
+    <rect x="60" y="210" width="220" height="56" class="actor-box"/>
+    <text x="170" y="245" class="actor" text-anchor="middle">Registrovaný uživatel (User)</text>
 
-    <!-- Manager -->
-    <rect x="40" y="300" width="150" height="44" class="actor-box"/>
-    <text x="115" y="328" class="actor">Manažer (Manager)</text>
+    <rect x="60" y="310" width="200" height="56" class="actor-box"/>
+    <text x="160" y="345" class="actor" text-anchor="middle">Manažer (Manager)</text>
 
-    <!-- Admin -->
-    <rect x="40" y="410" width="150" height="44" class="actor-box"/>
-    <text x="115" y="438" class="actor">Administrátor (Admin)</text>
+    <rect x="60" y="410" width="240" height="56" class="actor-box"/>
+    <text x="180" y="445" class="actor" text-anchor="middle">Administrátor (Admin)</text>
   </g>
 
-  <!-- Use cases (center column) -->
+  <!-- Use cases (center) -->
   <g id="usecases-center">
-    <!-- Column 1 -->
-    <ellipse cx="430" cy="80" rx="160" ry="28" class="usecase"/>
-    <text x="430" y="85" class="usecase-text">Prohlížet veřejné informace</text>
+    <ellipse cx="470" cy="110" rx="220" ry="34" class="usecase"/>
+    <text x="470" y="116" class="usecase-text">Prohlížet veřejné informace</text>
 
-    <ellipse cx="430" cy="150" rx="140" ry="26" class="usecase"/>
-    <text x="430" y="155" class="usecase-text">Registrovat se</text>
+    <ellipse cx="470" cy="190" rx="190" ry="32" class="usecase"/>
+    <text x="470" y="196" class="usecase-text">Registrovat se</text>
 
-    <ellipse cx="430" cy="220" rx="120" ry="26" class="usecase"/>
-    <text x="430" y="225" class="usecase-text">Přihlásit se</text>
+    <ellipse cx="470" cy="270" rx="160" ry="32" class="usecase"/>
+    <text x="470" y="276" class="usecase-text">Přihlásit se</text>
 
-    <ellipse cx="430" cy="290" rx="140" ry="26" class="usecase"/>
-    <text x="430" y="295" class="usecase-text">Spravovat profil</text>
+    <ellipse cx="470" cy="350" rx="190" ry="32" class="usecase"/>
+    <text x="470" y="356" class="usecase-text">Spravovat profil</text>
 
-    <ellipse cx="430" cy="360" rx="150" ry="26" class="usecase"/>
-    <text x="430" y="365" class="usecase-text">Vytvořit požadavek</text>
+    <ellipse cx="470" cy="430" rx="210" ry="32" class="usecase"/>
+    <text x="470" y="436" class="usecase-text">Vytvořit požadavek</text>
 
-    <ellipse cx="430" cy="430" rx="150" ry="26" class="usecase"/>
-    <text x="430" y="435" class="usecase-text">Prohlížet stav požadavku</text>
+    <ellipse cx="470" cy="510" rx="210" ry="32" class="usecase"/>
+    <text x="470" y="516" class="usecase-text">Prohlížet stav požadavku</text>
 
-    <ellipse cx="430" cy="500" rx="120" ry="26" class="usecase"/>
-    <text x="430" y="505" class="usecase-text">Prohlížet zprávy</text>
+    <ellipse cx="470" cy="590" rx="170" ry="32" class="usecase"/>
+    <text x="470" y="596" class="usecase-text">Prohlížet zprávy</text>
   </g>
 
-  <!-- Use cases (right column) -->
+  <!-- Use cases (right) -->
   <g id="usecases-right">
-    <ellipse cx="820" cy="200" rx="170" ry="30" class="usecase"/>
-    <text x="820" y="205" class="usecase-text">Schválit / odmítnout požadavek</text>
+    <ellipse cx="1000" cy="230" rx="240" ry="40" class="usecase accent"/>
+    <text x="1000" y="236" class="usecase-text">Schválit / odmítnout požadavek</text>
 
-    <ellipse cx="820" cy="300" rx="140" ry="26" class="usecase"/>
-    <text x="820" y="305" class="usecase-text">Spravovat uživatele</text>
+    <ellipse cx="1000" cy="330" rx="190" ry="34" class="usecase accent"/>
+    <text x="1000" y="336" class="usecase-text">Spravovat uživatele</text>
 
-    <ellipse cx="820" cy="360" rx="140" ry="26" class="usecase"/>
-    <text x="820" y="365" class="usecase-text">Generovat zprávy</text>
+    <ellipse cx="1000" cy="410" rx="190" ry="34" class="usecase accent"/>
+    <text x="1000" y="416" class="usecase-text">Generovat zprávy</text>
 
-    <ellipse cx="820" cy="430" rx="150" ry="26" class="usecase"/>
-    <text x="820" y="435" class="usecase-text">Konfigurovat systém</text>
+    <ellipse cx="1000" cy="490" rx="200" ry="34" class="usecase accent"/>
+    <text x="1000" y="496" class="usecase-text">Konfigurovat systém</text>
 
-    <ellipse cx="820" cy="500" rx="120" ry="26" class="usecase"/>
-    <text x="820" y="505" class="usecase-text">Zálohovat data</text>
+    <ellipse cx="1000" cy="570" rx="170" ry="34" class="usecase accent"/>
+    <text x="1000" y="576" class="usecase-text">Zálohovat data</text>
 
-    <ellipse cx="820" cy="560" rx="140" ry="26" class="usecase"/>
-    <text x="820" y="565" class="usecase-text">Odeslat notifikaci</text>
+    <ellipse cx="1000" cy="650" rx="200" ry="34" class="usecase accent"/>
+    <text x="1000" y="656" class="usecase-text">Odeslat notifikaci</text>
   </g>
 
-  <!-- Connections -->
-  <!-- Guest -->
-  <line x1="190" y1="102" x2="270" y2="85" class="line" />
-  <line x1="270" y1="85" x2="270" y2="85" class="line" />
-  <line x1="270" y1="85" x2="270" y2="85" class="line" />
-  <line x1="270" y1="85" x2="350" y2="85" class="line" />
+  <!-- Connections (stylish curved lines) -->
+  <path d="M250,140 C320,120 380,120 430,116" class="line" fill="none"/>
+  <path d="M250,250 C360,220 420,200 430,196" class="line" fill="none"/>
+  <path d="M250,360 C360,320 420,300 430,356" class="line" fill="none"/>
+  <path d="M250,460 C360,420 500,420 700,420" class="line" fill="none"/>
 
-  <!-- Guest -> Register -> Login includes (visual note) -->
-  <line x1="190" y1="220" x2="350" y2="150" class="line" />
-
-  <!-- User connections -->
-  <line x1="190" y1="228" x2="350" y2="225" class="line" />
-  <line x1="190" y1="228" x2="350" y2="295" class="line" />
-  <line x1="190" y1="228" x2="350" y2="365" class="line" />
-  <line x1="190" y1="228" x2="350" y2="435" class="line" />
-
-  <!-- Manager connections -->
-  <line x1="190" y1="338" x2="650" y2="205" class="line" />
-  <line x1="190" y1="338" x2="650" y2="365" class="line" />
-  <line x1="190" y1="338" x2="650" y2="305" class="line" />
-
-  <!-- Admin connections -->
-  <line x1="190" y1="448" x2="650" y2="305" class="line" />
-  <line x1="190" y1="448" x2="650" y2="435" class="line" />
-  <line x1="190" y1="448" x2="650" y2="505" class="line" />
-
-  <!-- CreateRequest includes SendNotification and ViewRequestStatus (visual arrows) -->
-  <line x1="580" y1="360" x2="740" y2="560" class="line" stroke-dasharray="6,4" />
-  <line x1="580" y1="360" x2="430" y2="430" class="line" stroke-dasharray="6,4" />
-
-  <!-- ApproveRequest includes SendNotification and GenerateReports (visual arrows) -->
-  <line x1="820" y1="200" x2="740" y2="560" class="line" stroke-dasharray="6,4" />
-  <line x1="820" y1="200" x2="820" y2="360" class="line" stroke-dasharray="6,4" />
+  <!-- include relations (dashed) -->
+  <path d="M680,430 C760,500 860,600 740,680" class="line" stroke-dasharray="8,6" fill="none"/>
+  <path d="M1000,230 C900,320 700,520 430,516" class="line" stroke-dasharray="8,6" fill="none"/>
 
   <!-- Legend / notes -->
-  <rect x="20" y="660" width="1160" height="80" rx="8" fill="#fff8e5" stroke="#d69e2e" />
-  <text x="40" y="690" class="note">Poznámky: Čárkované čáry značí relation "includes" (zahrnutí). Actor -> UseCase jsou přímé vazby mezi aktéry a případy užití.</text>
+  <rect x="60" y="760" width="1260" height="100" rx="12" class="legend" />
+  <text x="90" y="790" class="note">Poznámky: Čárkované čáry značí relation "includes" (zahrnutí). Barevné skupiny na pravé straně označují administrativní funkce.</text>
 
   <!-- Footer -->
-  <text x="600" y="740" text-anchor="middle" class="note">Autor: DKalousek — vygenerováno pro repozitář pslib-cz/2025-p1a-inf-nis-DKalousek</text>
+  <text x="700" y="835" text-anchor="middle" class="note">Autor: DKalousek — pslib-cz/2025-p1a-inf-nis-DKalousek</text>
 </svg>
