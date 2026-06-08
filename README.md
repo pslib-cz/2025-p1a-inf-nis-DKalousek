@@ -9,4 +9,12 @@ Níže je vložený UML Use Case diagram (SVG):
 
 Alternativně: [Stažení SVG](https://raw.githubusercontent.com/pslib-cz/2025-p1a-inf-nis-DKalousek/main/usecase-diagram.svg)
 
+## Sekvenční diagram
+
+Níže je vložen sekvenční diagram znázorňující komunikaci mezi uživatelem, frontendem, backendem a databází:
+
+![Sequence diagram](sequence-diagram.svg)
+
+Alternativně: [Stažení SVG sekvenčního diagramu](https://raw.githubusercontent.com/pslib-cz/2025-p1a-inf-nis-DKalousek/main/sequence-diagram.svg)
+
 Autor: DKalousek
