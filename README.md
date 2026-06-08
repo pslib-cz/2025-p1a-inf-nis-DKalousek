@@ -20,7 +20,7 @@ Alternativně: [Stažení SVG třídového diagramu](https://raw.githubuserconte
 
 Níže je vložen sekvenční diagram znázorňující komunikaci mezi uživatelem, frontendem, backendem a databází:
 
-![Sequence diagram](sequence-diagram.svg)
+![Sequence diagram](sequence_diagram_ztraty_a_nalezy.svg)
 
 Alternativně: [Stažení SVG sekvenčního diagramu](https://raw.githubusercontent.com/pslib-cz/2025-p1a-inf-nis-DKalousek/main/sequence-diagram.svg)
 
