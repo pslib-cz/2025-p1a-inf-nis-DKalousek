@@ -25,3 +25,7 @@ Níže je vložen sekvenční diagram znázorňující komunikaci mezi uživatel
 Alternativně: [Stažení SVG sekvenčního diagramu](https://raw.githubusercontent.com/pslib-cz/2025-p1a-inf-nis-DKalousek/main/sequence-diagram.svg)
 
 Autor: DKalousek
+
+## Komponentový diagram
+
+![Components diagram diagram](komponentovy_diagram_ztraty_nalezy.svg)
